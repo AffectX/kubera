@@ -64,7 +64,12 @@
     transition:
       color var(--transition-duration),
       background-color var(--transition-duration);
+  }
 
+  &__filter,
+  &__type,
+  &__type-select,
+  &__sort-select {
     @include hover {
       color: var(--color-white);
     }
@@ -85,6 +90,10 @@
     column-gap: 4px;
     min-height: 31px;
     white-space: nowrap;
+
+    span:first-child {
+      margin-right: 4px;
+    }
   }
 
   &__type {
@@ -99,7 +108,7 @@
   &__type-select,
   &__sort-select {
     min-height: 31px;
-    color: inherit;
+    color: rgba(255, 255, 255, 0.6);
     background-color: transparent;
     border: 0;
     appearance: none;
