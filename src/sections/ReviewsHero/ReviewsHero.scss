@@ -87,7 +87,7 @@
     display: inline-flex;
     flex-shrink: 0;
     align-items: center;
-    column-gap: 4px;
+    column-gap: 2px;
     min-height: 31px;
     white-space: nowrap;
 
@@ -123,7 +123,7 @@
   &__select-icon {
     width: 8px;
     height: 6px;
-    background-color: currentColor;
+    background-color: var(--color-white);
     clip-path: polygon(50% 100%, 0 0, 100% 0);
     pointer-events: none;
   }
@@ -236,7 +236,6 @@
     &__sort-select {
       width: auto;
       max-width: max-content;
-      padding-right: 0;
       flex: 0 0 auto;
     }
 
