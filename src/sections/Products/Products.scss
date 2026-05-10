@@ -1,0 +1,224 @@
+.products {
+  padding-block: fluid(10, 0) fluid(90, 40);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: fluid(20, 10);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.products-card,
+.products-request {
+  position: relative;
+  overflow: hidden;
+  min-height: fluid(380, 350);
+  padding: fluid(40, 20);
+  background-color: var(--color-brown);
+  border-radius: var(--border-radius-20);
+}
+
+.products-card {
+  display: grid;
+  grid-template: 1fr / 1fr;
+
+  &__body,
+  &__picture {
+    grid-area: 1 / 1;
+    position: relative;
+    min-width: 0;
+  }
+
+  &__body {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: min(48%, 420px);
+  }
+
+  &__title {
+    max-width: 11em;
+    margin-bottom: fluid(10, 8);
+    font-family: 'Arial Black', sans-serif;
+    line-height: 1.3;
+    white-space: pre-line;
+  }
+
+  &__description {
+    font-size: fluid(24, 20);
+    line-height: 1.3;
+    color: var(--color-gray);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-self: start;
+    align-items: center;
+    column-gap: 3px;
+    font-size: fluid(24, 20);
+    line-height: 1.3;
+    color: var(--color-gray);
+
+    @include hover {
+      color: var(--color-white);
+    }
+  }
+
+  &__link-icon {
+    --iconSize: 16px;
+
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+
+  &__picture {
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    pointer-events: none;
+  }
+
+  &__image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__image--primary {
+    width: fluid(640, 300);
+    margin-right: fluid(-220, -64);
+    margin-bottom: fluid(-150, -12);
+  }
+
+  &__image--secondary {
+    width: fluid(620, 250);
+    margin-right: fluid(-230, -88);
+    margin-bottom: fluid(-160, -24);
+  }
+
+  @include tablet {
+    min-height: auto;
+
+    &__body {
+      width: 56%;
+    }
+
+    &__image--primary {
+      width: 300px;
+      margin-right: -64px;
+      margin-bottom: -12px;
+    }
+
+    &__image--secondary {
+      width: 250px;
+      margin-right: -88px;
+      margin-bottom: -24px;
+    }
+  }
+}
+
+.products-request {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('../../assets/images/Products/form-bg.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  border: var(--border-width-1) solid #ffc011;
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    max-width: 26em;
+    font-family: 'Arial Black', sans-serif;
+    line-height: 1.3;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    row-gap: 12px;
+    margin-top: fluid(60, 20);
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+  }
+
+  &__control,
+  &__button {
+    width: 100%;
+    min-height: 40px;
+    font-size: fluid(24, 16);
+    line-height: 1.3;
+    border-radius: var(--border-radius-5);
+  }
+
+  &__control {
+    min-width: 0;
+    padding: 4px 12px;
+    color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: var(--border-width-1) solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+
+    &::placeholder {
+      font-size: inherit;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__button {
+    justify-content: center;
+    white-space: nowrap;
+    transition:
+      color var(--transition-duration),
+      background-color var(--transition-duration),
+      border-color var(--transition-duration),
+      box-shadow var(--transition-duration),
+      transform var(--transition-duration);
+
+    @include hover {
+      color: var(--color-white);
+      background-color: #d69513;
+      border-color: #ffc45c;
+      box-shadow: 0 0 18px rgba(181, 121, 0, 0.45);
+      transform: translateY(-1px);
+    }
+  }
+
+  &__privacy {
+    font-size: fluid(16, 14);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-gray);
+  }
+
+  @include tablet {
+    min-height: 400px;
+    background-position: right bottom;
+    background-size: cover;
+
+    &__fields {
+      grid-template-columns: 1fr;
+    }
+
+    &__button {
+      white-space: normal;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.footer {
+  padding-block: 40px 55px;
+  background-color: var(--color-brown-900);
+
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 24px;
+    min-height: 430px;
+  }
+
+  &__section {
+    min-width: 0;
+  }
+
+  &__title,
+  &__text,
+  &__link {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-weight: 400;
+    color: var(--color-gray);
+  }
+
+  &__title--spaced {
+    margin-top: 22px;
+  }
+
+  &__text {
+    color: var(--color-white);
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 12px;
+  }
+
+  &__link {
+    display: inline-flex;
+    color: var(--color-white);
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    color: var(--color-brown-900);
+    background-color: var(--color-white);
+    border-radius: 50%;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__social-icon {
+    --iconSize: 22px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+    padding-top: 22px;
+    border-top: var(--border-width-1) solid var(--color-gray-200);
+  }
+
+  &__copyright,
+  &__developer {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @include tablet {
+    &__main {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: fluid(48, 24) 24px;
+      min-height: auto;
+      margin-bottom: fluid(78, 20);
+    }
+
+    &__title,
+    &__text,
+    &__link {
+      font-size: fluid(24, 20);
+    }
+  }
+
+  @include mobile {
+    padding-block: 60px;
+
+    &__main {
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    &__title,
+    &__text,
+    &__link {
+      font-size: 20px;
+    }
+
+    &__title--spaced {
+      margin-top: 20px;
+    }
+
+    &__list {
+      row-gap: 12px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    &__copyright,
+    &__developer {
+      font-size: 14px;
+      line-height: 1.14;
+    }
+  }
+}
