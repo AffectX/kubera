@@ -7,6 +7,7 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 24px;
     min-height: 430px;
+    margin-bottom: fluid(78, 20);
   }
 
   &__section {
@@ -94,7 +95,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: fluid(48, 24) 24px;
       min-height: auto;
-      margin-bottom: fluid(78, 20);
     }
 
     &__title,
@@ -110,7 +110,7 @@
     &__main {
       grid-template-columns: 1fr;
       row-gap: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     &__title,
@@ -130,6 +130,7 @@
     &__bottom {
       flex-direction: column;
       row-gap: 20px;
+      padding-top: 20px;
     }
 
     &__copyright,

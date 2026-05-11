@@ -71,7 +71,7 @@
   @include mobile {
     grid-template-columns: 1fr;
     row-gap: 20px;
-    padding-block: 20px 0;
+    padding-block: 40px;
 
     &__content {
       display: contents;

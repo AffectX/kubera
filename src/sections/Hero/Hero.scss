@@ -4,15 +4,11 @@
   position: relative;
   overflow: hidden;
   min-height: 420px;
-  padding: 200px 40px 40px;
+  padding-block: 200px 40px;
   background-color: var(--heroBgColor);
 
-  @include laptop {
-    padding-inline: var(--container-padding-x);
-  }
-
   @include tablet {
-    padding: 280px 24px 24px;
+    padding-block: 280px 24px;
   }
 
   &::before {
@@ -113,8 +109,6 @@
     border: var(--border);
     border-radius: var(--border-radius-20);
     backdrop-filter: blur(4px);
-
-   
   }
 
   &__advantage-icon {
@@ -137,5 +131,11 @@
   &__advantage-title {
     line-height: 1.3;
     display: flex;
+  }
+
+  @include mobile {
+    &__advantage {
+      min-height: 84px;
+    }
   }
 }

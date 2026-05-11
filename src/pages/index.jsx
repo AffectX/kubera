@@ -1,5 +1,4 @@
 import Hero from '@/sections/Hero'
-import AboutProduction from '@/sections/AboutProduction'
 import Advantages from '@/sections/Advantages'
 import Cases from '@/sections/Cases'
 import Products from '@/sections/Products'
@@ -8,6 +7,7 @@ import Reviews from '@/sections/Reviews'
 import Route from '@/sections/Route'
 import Standards from '@/sections/Standards'
 import WorkFeatures from '@/sections/WorkFeatures'
+import ProductionShowcase from '@/sections/ProductionShowcase'
 
 export const metadata = {
   title: 'Главная',
@@ -20,7 +20,7 @@ export default () => {
       <Products />
       <Advantages />
       <Cases />
-      <AboutProduction />
+      <ProductionShowcase />
       <Reviews />
       <WorkFeatures />
       <Standards />
